@@ -1,6 +1,6 @@
 <?php
 
-namespace TANline\Controllers\Home;
+namespace TANline\Controllers\Data;
 
 use Silex\Application;
 use Silex\Api\ControllerProviderInterface;
@@ -9,7 +9,7 @@ class Provider implements ControllerProviderInterface
 {
     public function connect(Application $app)
     {
-        $app['controller.home'] = function() use($app) {
+        $app['controller.data'] = function() use($app) {
             $controller = new Controller($app['db.default']);
             $controller
                 ->setRequest($app['request_stack'])
@@ -21,7 +21,7 @@ class Provider implements ControllerProviderInterface
         $controllers = $app['controllers_factory'];
 
         $controllers
-            ->match('/', 'controller.home:homeAction')
+            ->match('/', 'controller.data:indexAction')
             ->method('GET')
             ->bind('home');
 

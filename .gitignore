@@ -36,3 +36,5 @@ jdepend.svg
 .buildpath
 .project
 .settings/
+.idea
+

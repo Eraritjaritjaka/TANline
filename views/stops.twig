@@ -1,0 +1,13 @@
+{% extends 'home.twig' %}
+
+{% block content %}
+
+  <form>
+  <select>
+    {% for test in tests %}
+      <option value="{{ test.stop_name }}">{{ test.stop_name }}</option>
+    {% endfor %}
+  </select>
+  </form>
+
+{% endblock %}
